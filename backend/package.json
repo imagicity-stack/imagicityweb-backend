@@ -1,0 +1,29 @@
+{
+  "name": "imagicity-backend",
+  "version": "1.0.0",
+  "description": "API backend for Imagicity web application.",
+  "type": "module",
+  "main": "src/server.js",
+  "scripts": {
+    "dev": "node --env-file=.env src/server.js",
+    "start": "node src/server.js",
+    "lint": "eslint ."
+  },
+  "engines": {
+    "node": ">=18.0.0"
+  },
+  "dependencies": {
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "fs-extra": "^11.2.0",
+    "helmet": "^7.1.0",
+    "joi": "^17.12.1",
+    "morgan": "^1.10.0",
+    "multer": "^1.4.5-lts.1",
+    "nanoid": "^4.0.2"
+  },
+  "devDependencies": {
+    "eslint": "^8.56.0",
+    "eslint-config-prettier": "^9.1.0"
+  }
+}

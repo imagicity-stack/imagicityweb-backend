@@ -98,6 +98,17 @@ with a database layer (PostgreSQL, DynamoDB, etc.) without disrupting the route 
 - Uploads live under `/uploads` and are served as static assets; ensure the directory is
   writable on the deployment target.
 - Elastic Beanstalk Node.js environments will pick up the `start` script automatically.
+- When deploying to Elastic Beanstalk, the application bundle must contain the backend
+  files at the root of the archive (i.e. `package.json` should not be nested inside a
+  `backend/` folder). Run the helper script below to generate a compatible archive:
+
+  ```bash
+  cd backend
+  ./scripts/package-eb.sh
+  ```
+
+  The script installs production dependencies and creates `deploy/imagicity-backend-eb.zip`,
+  which you can upload directly in the Elastic Beanstalk console.
 
 Feel free to extend the controllers to integrate with your preferred storage services or
 cloud-native pipelines as the project scales.
